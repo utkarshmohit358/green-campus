@@ -1,0 +1,233 @@
+{
+  "summary": {
+    "totalKgCollected": 4820,
+    "totalUnitsCollected": 2140,
+    "diversionRatePct": 98.4,
+    "co2AvoidedKg": 9061.6,
+    "reusedCount": 612,
+    "refurbishedCount": 584,
+    "recycledCount": 944,
+    "certifiedHandoverCount": 2140
+  },
+  "categories": [
+    { "id": "laptops", "name": "Laptops & Notebooks", "weightKg": 1240, "units": 490, "co2AvoidedKg": 2331, "color": "#10B981" },
+    { "id": "desktops", "name": "Desktop Towers & Workstations", "weightKg": 1680, "units": 210, "co2AvoidedKg": 3158, "color": "#0B3D2E" },
+    { "id": "phones", "name": "Smartphones & Mobile Handsets", "weightKg": 240, "units": 680, "co2AvoidedKg": 451, "color": "#34D399" },
+    { "id": "batteries", "name": "Li-ion & UPS Battery Packs", "weightKg": 420, "units": 180, "co2AvoidedKg": 790, "color": "#F59E0B" },
+    { "id": "cables", "name": "Cables, Chargers & Adapters", "weightKg": 380, "units": 890, "co2AvoidedKg": 714, "color": "#6366F1" },
+    { "id": "printers", "name": "Printers, Cartridges & Scanners", "weightKg": 510, "units": 45, "co2AvoidedKg": 958, "color": "#EC4899" },
+    { "id": "peripherals", "name": "Keyboards, Mice & Peripherals", "weightKg": 260, "units": 430, "co2AvoidedKg": 488, "color": "#06B6D4" },
+    { "id": "other", "name": "Network Switches & Circuit Boards", "weightKg": 90, "units": 85, "co2AvoidedKg": 169, "color": "#8B5CF6" }
+  ],
+  "disposalPathways": [
+    {
+      "stage": "Campus Collection",
+      "percentage": 100,
+      "items": 2140,
+      "weightKg": 4820,
+      "description": "Collected via smart smart campus bins and seasonal e-waste drives."
+    },
+    {
+      "stage": "Triage & Testing",
+      "percentage": 100,
+      "items": 2140,
+      "weightKg": 4820,
+      "description": "Student-led Green Club technicians inspect, triage, and data-sanitize."
+    },
+    {
+      "stage": "Direct Reuse (28.6%)",
+      "percentage": 28.6,
+      "items": 612,
+      "weightKg": 1180,
+      "description": "Donated to underprivileged local community schools & high schools."
+    },
+    {
+      "stage": "Refurbishment (27.3%)",
+      "percentage": 27.3,
+      "items": 584,
+      "weightKg": 1390,
+      "description": "Upgraded with SSDs & RAM for campus maker spaces and open labs."
+    },
+    {
+      "stage": "Certified Hydrometallurgical Recycling (44.1%)",
+      "percentage": 44.1,
+      "items": 944,
+      "weightKg": 2250,
+      "description": "CPCB-certified R2 recyclers for closed-loop gold, copper & rare earth recovery."
+    }
+  ],
+  "recoveredMaterials": {
+    "copperKg": 578.4,
+    "aluminiumKg": 409.7,
+    "steelKg": 1494.2,
+    "goldGrams": 134.96,
+    "silverGrams": 867.6,
+    "plasticsKg": 1156.8
+  },
+  "bins": [
+    {
+      "id": "bin-1",
+      "name": "Central Library Atrium Bin",
+      "building": "Tagore Central Library",
+      "floor": "Ground Floor Lobby",
+      "fillPct": 82,
+      "capacityKg": 50,
+      "currentKg": 41,
+      "coords": { "x": 48, "y": 42 },
+      "status": "near_full",
+      "lastEmptied": "2024-10-18"
+    },
+    {
+      "id": "bin-2",
+      "name": "Computer Science Tech Block Bin",
+      "building": "Alan Turing Tech Block",
+      "floor": "2nd Floor East Wing",
+      "fillPct": 45,
+      "capacityKg": 60,
+      "currentKg": 27,
+      "coords": { "x": 28, "y": 28 },
+      "status": "normal",
+      "lastEmptied": "2024-10-24"
+    },
+    {
+      "id": "bin-3",
+      "name": "Electronics & Electrical Wing Bin",
+      "building": "J.C. Bose Hall",
+      "floor": "1st Floor Stairwell",
+      "fillPct": 92,
+      "capacityKg": 50,
+      "currentKg": 46,
+      "coords": { "x": 35, "y": 68 },
+      "status": "critical",
+      "lastEmptied": "2024-10-12"
+    },
+    {
+      "id": "bin-4",
+      "name": "Student Activity Center (SAC) Bin",
+      "building": "Vivekananda Student Hub",
+      "floor": "Recreation Area",
+      "fillPct": 30,
+      "capacityKg": 40,
+      "currentKg": 12,
+      "coords": { "x": 72, "y": 35 },
+      "status": "normal",
+      "lastEmptied": "2024-10-28"
+    },
+    {
+      "id": "bin-5",
+      "name": "Mechanical Workshops Bin",
+      "building": "Visvesvaraya Complex",
+      "floor": "Lab 1 Entrance",
+      "fillPct": 60,
+      "capacityKg": 80,
+      "currentKg": 48,
+      "coords": { "x": 65, "y": 74 },
+      "status": "normal",
+      "lastEmptied": "2024-10-20"
+    },
+    {
+      "id": "bin-6",
+      "name": "Hostel Zone Recycling Kiosk",
+      "building": "Aryabhata Residence Block",
+      "floor": "Common Room",
+      "fillPct": 75,
+      "capacityKg": 50,
+      "currentKg": 37.5,
+      "coords": { "x": 84, "y": 58 },
+      "status": "normal",
+      "lastEmptied": "2024-10-21"
+    }
+  ],
+  "drives": [
+    {
+      "id": "drive-upcoming-1",
+      "title": "Semester E-Waste Festive Amnesty Drive",
+      "date": "2024-11-20 to 2024-11-23",
+      "status": "upcoming",
+      "location": "Main Auditorium Forecourt",
+      "targetKg": 1200,
+      "registeredPledges": 340,
+      "incentives": "Earn Green Ambassador Certificate + Refurbished Gadget Raffle Tickets"
+    },
+    {
+      "id": "drive-upcoming-2",
+      "title": "Hostel Clean-Out & Cable Roundup",
+      "date": "2024-12-05",
+      "status": "upcoming",
+      "location": "Boys & Girls Hostels Quad",
+      "targetKg": 450,
+      "registeredPledges": 115,
+      "incentives": "Campus Cafeteria Green Discount Coupons"
+    },
+    {
+      "id": "drive-past-1",
+      "title": "World Environment Day Tech Recovery Week",
+      "date": "2024-06-05 to 2024-06-12",
+      "status": "completed",
+      "location": "Central Campus Lawn",
+      "collectedKg": 1420,
+      "unitsRecovered": 680,
+      "donorCount": 425
+    },
+    {
+      "id": "drive-past-2",
+      "title": "Spring Semester Green Sprint",
+      "date": "2024-03-15 to 2024-03-18",
+      "status": "completed",
+      "location": "SAC Ground Floor",
+      "collectedKg": 980,
+      "unitsRecovered": 430,
+      "donorCount": 310
+    }
+  ],
+  "recentDonations": [
+    {
+      "id": "don-1",
+      "donorName": "Kavita Narang",
+      "department": "Computer Science",
+      "category": "Laptops",
+      "itemDescription": "Dell Inspiron 15 (2019, operational with charger)",
+      "quantity": 1,
+      "weightKg": 2.2,
+      "condition": "working",
+      "date": "2024-10-31",
+      "binLocation": "TB-East Bin"
+    },
+    {
+      "id": "don-2",
+      "donorName": "Rohan Mehra",
+      "department": "Electronics & Comm",
+      "category": "Smartphones",
+      "itemDescription": "Redmi Note 9 + Samsung Galaxy A50",
+      "quantity": 2,
+      "weightKg": 0.45,
+      "condition": "repairable",
+      "date": "2024-10-30",
+      "binLocation": "SAC Bin"
+    },
+    {
+      "id": "don-3",
+      "donorName": "Dept of Electrical Engg",
+      "department": "Electrical Engg",
+      "category": "Peripherals",
+      "itemDescription": "Batch of 25 wired optical mice and keyboards",
+      "quantity": 25,
+      "weightKg": 18.5,
+      "condition": "repairable",
+      "date": "2024-10-28",
+      "binLocation": "JCB Bin"
+    },
+    {
+      "id": "don-4",
+      "donorName": "Dr. Ananya Sen",
+      "department": "Biotechnology",
+      "category": "Printers",
+      "itemDescription": "HP LaserJet M1005 (replaced by departmental multi-user duplex)",
+      "quantity": 1,
+      "weightKg": 8.2,
+      "condition": "working",
+      "date": "2024-10-25",
+      "binLocation": "Library Bin"
+    }
+  ]
+}

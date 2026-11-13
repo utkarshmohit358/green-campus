@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FBFBFA;
+  --foreground: #11181C;
+  --forest-900: #061A13;
+  --forest-800: #0B3D2E;
+  --forest-700: #124D3B;
+  --emerald-500: #10B981;
+  --leaf-400: #34C759;
+  --mint-100: #D8F3DC;
+  --mint-50: #EDF7F0;
+  --amber-500: #F59E0B;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(11, 61, 46, 0.08);
+  --card-shadow: 0 20px 40px -15px rgba(11, 61, 46, 0.07);
+  --nav-bg: rgba(251, 251, 250, 0.8);
+  --badge-bg: #E8F7ED;
+  --badge-text: #0B3D2E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #050E0A;
+  --foreground: #F1F5F3;
+  --forest-900: #030806;
+  --forest-800: #08241B;
+  --forest-700: #0D3528;
+  --emerald-500: #10B981;
+  --leaf-400: #34D399;
+  --mint-100: #133827;
+  --mint-50: #0A1E16;
+  --amber-500: #FBBF24;
+  --card-bg: rgba(13, 34, 26, 0.75);
+  --card-border: rgba(52, 211, 153, 0.15);
+  --card-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65);
+  --nav-bg: rgba(5, 14, 10, 0.8);
+  --badge-bg: rgba(16, 185, 129, 0.18);
+  --badge-text: #6EE7B7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Apple-style Display Headings */
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+}
+
+.section-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* Radiant glow effects */
+.radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.14), transparent 70%);
+}
+
+.radial-glow-amber {
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.12), transparent 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+/* Card 3D hover & glow effects */
+.interactive-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 24px 48px -12px rgba(11, 61, 46, 0.15);
+}
+
+.dark .interactive-card:hover {
+  box-shadow: 0 24px 50px -10px rgba(16, 185, 129, 0.15);
+}
+
+/* Print Styles for Executive Report PDF download */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print, header, nav, footer, .command-palette-btn, .toast-container {
+    display: none !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }

@@ -1,0 +1,350 @@
+{
+  "departments": [
+    {
+      "id": "cse",
+      "code": "CSE",
+      "name": "Computer Science & Engineering",
+      "building": "Alan Turing Tech Block",
+      "floors": "3rd & 4th Floors",
+      "studentCount": 840,
+      "facultyCount": 42,
+      "labs": [
+        {
+          "id": "cse-lab-1",
+          "name": "AI & Deep Learning Research Lab",
+          "room": "TB-401",
+          "pcCount": 60,
+          "hasGpus": true,
+          "hoursOpenPerDay": 14,
+          "monthlyTargetKWh": 4200,
+          "currentMonthlyKWh": 3950,
+          "anomalyAlert": null
+        },
+        {
+          "id": "cse-lab-2",
+          "name": "Cloud Computing & Systems Lab",
+          "room": "TB-408",
+          "pcCount": 55,
+          "hasGpus": false,
+          "hoursOpenPerDay": 12,
+          "monthlyTargetKWh": 2800,
+          "currentMonthlyKWh": 3150,
+          "anomalyAlert": "High baseline overnight: 18 workstations left powered on between 11 PM and 6 AM."
+        },
+        {
+          "id": "cse-lab-3",
+          "name": "Software Engineering & Algorithmic Lab",
+          "room": "TB-302",
+          "pcCount": 70,
+          "hasGpus": false,
+          "hoursOpenPerDay": 10,
+          "monthlyTargetKWh": 2900,
+          "currentMonthlyKWh": 2680,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 10450, "co2Kg": 7419.5, "target": 10500 },
+        { "month": "Dec 23", "kwh": 9800, "co2Kg": 6958.0, "target": 10200 },
+        { "month": "Jan 24", "kwh": 9950, "co2Kg": 7064.5, "target": 10200 },
+        { "month": "Feb 24", "kwh": 10200, "co2Kg": 7242.0, "target": 10100 },
+        { "month": "Mar 24", "kwh": 10600, "co2Kg": 7526.0, "target": 10000 },
+        { "month": "Apr 24", "kwh": 10100, "co2Kg": 7171.0, "target": 9900 },
+        { "month": "May 24", "kwh": 8400, "co2Kg": 5964.0, "target": 9000 },
+        { "month": "Jun 24", "kwh": 7600, "co2Kg": 5396.0, "target": 8500 },
+        { "month": "Jul 24", "kwh": 9900, "co2Kg": 7029.0, "target": 9800 },
+        { "month": "Aug 24", "kwh": 10300, "co2Kg": 7313.0, "target": 9900 },
+        { "month": "Sep 24", "kwh": 9980, "co2Kg": 7085.8, "target": 9900 },
+        { "month": "Oct 24", "kwh": 9780, "co2Kg": 6943.8, "target": 9900 }
+      ]
+    },
+    {
+      "id": "it",
+      "code": "IT",
+      "name": "Information Technology",
+      "building": "Grace Hopper Complex",
+      "floors": "2nd Floor",
+      "studentCount": 620,
+      "facultyCount": 31,
+      "labs": [
+        {
+          "id": "it-lab-1",
+          "name": "Cybersecurity & Forensic Computing Lab",
+          "room": "GH-202",
+          "pcCount": 50,
+          "hasGpus": false,
+          "hoursOpenPerDay": 11,
+          "monthlyTargetKWh": 2400,
+          "currentMonthlyKWh": 2210,
+          "anomalyAlert": null
+        },
+        {
+          "id": "it-lab-2",
+          "name": "Web & Mobile App Dev Studio",
+          "room": "GH-206",
+          "pcCount": 65,
+          "hasGpus": false,
+          "hoursOpenPerDay": 10,
+          "monthlyTargetKWh": 2700,
+          "currentMonthlyKWh": 2520,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 5600, "co2Kg": 3976, "target": 5500 },
+        { "month": "Dec 23", "kwh": 5200, "co2Kg": 3692, "target": 5300 },
+        { "month": "Jan 24", "kwh": 5350, "co2Kg": 3798, "target": 5300 },
+        { "month": "Feb 24", "kwh": 5420, "co2Kg": 3848, "target": 5250 },
+        { "month": "Mar 24", "kwh": 5610, "co2Kg": 3983, "target": 5200 },
+        { "month": "Apr 24", "kwh": 5300, "co2Kg": 3763, "target": 5150 },
+        { "month": "May 24", "kwh": 4100, "co2Kg": 2911, "target": 4500 },
+        { "month": "Jun 24", "kwh": 3700, "co2Kg": 2627, "target": 4200 },
+        { "month": "Jul 24", "kwh": 5100, "co2Kg": 3621, "target": 5100 },
+        { "month": "Aug 24", "kwh": 5250, "co2Kg": 3727, "target": 5100 },
+        { "month": "Sep 24", "kwh": 4950, "co2Kg": 3514, "target": 5100 },
+        { "month": "Oct 24", "kwh": 4730, "co2Kg": 3358, "target": 5100 }
+      ]
+    },
+    {
+      "id": "ece",
+      "code": "ECE",
+      "name": "Electronics & Communication",
+      "building": "J.C. Bose Hall of Engineering",
+      "floors": "Ground & 1st Floor",
+      "studentCount": 710,
+      "facultyCount": 38,
+      "labs": [
+        {
+          "id": "ece-lab-1",
+          "name": "VLSI Design & Embedded Systems Lab",
+          "room": "JCB-104",
+          "pcCount": 45,
+          "hasGpus": false,
+          "hoursOpenPerDay": 11,
+          "monthlyTargetKWh": 2100,
+          "currentMonthlyKWh": 1940,
+          "anomalyAlert": null
+        },
+        {
+          "id": "ece-lab-2",
+          "name": "Digital Signal Processing & IoT Lab",
+          "room": "JCB-112",
+          "pcCount": 50,
+          "hasGpus": false,
+          "hoursOpenPerDay": 10,
+          "monthlyTargetKWh": 2200,
+          "currentMonthlyKWh": 2180,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 4800, "co2Kg": 3408, "target": 4700 },
+        { "month": "Dec 23", "kwh": 4500, "co2Kg": 3195, "target": 4600 },
+        { "month": "Jan 24", "kwh": 4620, "co2Kg": 3280, "target": 4600 },
+        { "month": "Feb 24", "kwh": 4710, "co2Kg": 3344, "target": 4550 },
+        { "month": "Mar 24", "kwh": 4850, "co2Kg": 3443, "target": 4500 },
+        { "month": "Apr 24", "kwh": 4550, "co2Kg": 3230, "target": 4450 },
+        { "month": "May 24", "kwh": 3600, "co2Kg": 2556, "target": 3900 },
+        { "month": "Jun 24", "kwh": 3200, "co2Kg": 2272, "target": 3600 },
+        { "month": "Jul 24", "kwh": 4400, "co2Kg": 3124, "target": 4400 },
+        { "month": "Aug 24", "kwh": 4520, "co2Kg": 3209, "target": 4350 },
+        { "month": "Sep 24", "kwh": 4210, "co2Kg": 2989, "target": 4300 },
+        { "month": "Oct 24", "kwh": 4120, "co2Kg": 2925, "target": 4300 }
+      ]
+    },
+    {
+      "id": "ee",
+      "code": "EE",
+      "name": "Electrical Engineering",
+      "building": "Tesla Center for Energy Sciences",
+      "floors": "1st Floor",
+      "studentCount": 540,
+      "facultyCount": 28,
+      "labs": [
+        {
+          "id": "ee-lab-1",
+          "name": "Smart Grid & Power Simulation Lab",
+          "room": "TC-105",
+          "pcCount": 40,
+          "hasGpus": false,
+          "hoursOpenPerDay": 9,
+          "monthlyTargetKWh": 1700,
+          "currentMonthlyKWh": 1580,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 2100, "co2Kg": 1491, "target": 2000 },
+        { "month": "Dec 23", "kwh": 1950, "co2Kg": 1384, "target": 1950 },
+        { "month": "Jan 24", "kwh": 1980, "co2Kg": 1405, "target": 1950 },
+        { "month": "Feb 24", "kwh": 2050, "co2Kg": 1455, "target": 1900 },
+        { "month": "Mar 24", "kwh": 2120, "co2Kg": 1505, "target": 1850 },
+        { "month": "Apr 24", "kwh": 1980, "co2Kg": 1405, "target": 1800 },
+        { "month": "May 24", "kwh": 1500, "co2Kg": 1065, "target": 1600 },
+        { "month": "Jun 24", "kwh": 1350, "co2Kg": 958, "target": 1500 },
+        { "month": "Jul 24", "kwh": 1890, "co2Kg": 1341, "target": 1800 },
+        { "month": "Aug 24", "kwh": 1920, "co2Kg": 1363, "target": 1750 },
+        { "month": "Sep 24", "kwh": 1750, "co2Kg": 1242, "target": 1700 },
+        { "month": "Oct 24", "kwh": 1580, "co2Kg": 1121, "target": 1700 }
+      ]
+    },
+    {
+      "id": "mech",
+      "code": "MECH",
+      "name": "Mechanical Engineering",
+      "building": "Visvesvaraya Mechanical Complex",
+      "floors": "Ground Floor",
+      "studentCount": 680,
+      "facultyCount": 35,
+      "labs": [
+        {
+          "id": "mech-lab-1",
+          "name": "CAD/CAM & FEA Simulation Studio",
+          "room": "VMC-08",
+          "pcCount": 50,
+          "hasGpus": true,
+          "hoursOpenPerDay": 10,
+          "monthlyTargetKWh": 2600,
+          "currentMonthlyKWh": 2480,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 3100, "co2Kg": 2201, "target": 3000 },
+        { "month": "Dec 23", "kwh": 2850, "co2Kg": 2023, "target": 2900 },
+        { "month": "Jan 24", "kwh": 2920, "co2Kg": 2073, "target": 2900 },
+        { "month": "Feb 24", "kwh": 3050, "co2Kg": 2165, "target": 2850 },
+        { "month": "Mar 24", "kwh": 3180, "co2Kg": 2257, "target": 2800 },
+        { "month": "Apr 24", "kwh": 2950, "co2Kg": 2094, "target": 2750 },
+        { "month": "May 24", "kwh": 2200, "co2Kg": 1562, "target": 2400 },
+        { "month": "Jun 24", "kwh": 1950, "co2Kg": 1384, "target": 2200 },
+        { "month": "Jul 24", "kwh": 2800, "co2Kg": 1988, "target": 2700 },
+        { "month": "Aug 24", "kwh": 2890, "co2Kg": 2051, "target": 2650 },
+        { "month": "Sep 24", "kwh": 2620, "co2Kg": 1860, "target": 2600 },
+        { "month": "Oct 24", "kwh": 2480, "co2Kg": 1760, "target": 2600 }
+      ]
+    },
+    {
+      "id": "civil",
+      "code": "CIVIL",
+      "name": "Civil Engineering",
+      "building": "Sir M.V. Infrastructure Wing",
+      "floors": "2nd Floor",
+      "studentCount": 510,
+      "facultyCount": 26,
+      "labs": [
+        {
+          "id": "civil-lab-1",
+          "name": "GIS & Computational Structural Analysis Lab",
+          "room": "MV-204",
+          "pcCount": 35,
+          "hasGpus": false,
+          "hoursOpenPerDay": 8,
+          "monthlyTargetKWh": 1400,
+          "currentMonthlyKWh": 1320,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 1650, "co2Kg": 1171, "target": 1600 },
+        { "month": "Dec 23", "kwh": 1500, "co2Kg": 1065, "target": 1550 },
+        { "month": "Jan 24", "kwh": 1540, "co2Kg": 1093, "target": 1550 },
+        { "month": "Feb 24", "kwh": 1600, "co2Kg": 1136, "target": 1500 },
+        { "month": "Mar 24", "kwh": 1680, "co2Kg": 1192, "target": 1450 },
+        { "month": "Apr 24", "kwh": 1520, "co2Kg": 1079, "target": 1400 },
+        { "month": "May 24", "kwh": 1150, "co2Kg": 816, "target": 1300 },
+        { "month": "Jun 24", "kwh": 1020, "co2Kg": 724, "target": 1200 },
+        { "month": "Jul 24", "kwh": 1450, "co2Kg": 1029, "target": 1400 },
+        { "month": "Aug 24", "kwh": 1490, "co2Kg": 1057, "target": 1400 },
+        { "month": "Sep 24", "kwh": 1380, "co2Kg": 979, "target": 1400 },
+        { "month": "Oct 24", "kwh": 1320, "co2Kg": 937, "target": 1400 }
+      ]
+    },
+    {
+      "id": "mba",
+      "code": "MBA",
+      "name": "School of Management Studies",
+      "building": "Chanakya Management Tower",
+      "floors": "3rd Floor",
+      "studentCount": 420,
+      "facultyCount": 24,
+      "labs": [
+        {
+          "id": "mba-lab-1",
+          "name": "Financial Analytics & Bloomberg Terminal Lab",
+          "room": "CMT-301",
+          "pcCount": 40,
+          "hasGpus": false,
+          "hoursOpenPerDay": 9,
+          "monthlyTargetKWh": 1600,
+          "currentMonthlyKWh": 1490,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 1800, "co2Kg": 1278, "target": 1750 },
+        { "month": "Dec 23", "kwh": 1650, "co2Kg": 1171, "target": 1700 },
+        { "month": "Jan 24", "kwh": 1720, "co2Kg": 1221, "target": 1700 },
+        { "month": "Feb 24", "kwh": 1780, "co2Kg": 1263, "target": 1650 },
+        { "month": "Mar 24", "kwh": 1820, "co2Kg": 1292, "target": 1600 },
+        { "month": "Apr 24", "kwh": 1690, "co2Kg": 1199, "target": 1600 },
+        { "month": "May 24", "kwh": 1300, "co2Kg": 923, "target": 1450 },
+        { "month": "Jun 24", "kwh": 1180, "co2Kg": 837, "target": 1350 },
+        { "month": "Jul 24", "kwh": 1600, "co2Kg": 1136, "target": 1600 },
+        { "month": "Aug 24", "kwh": 1640, "co2Kg": 1164, "target": 1550 },
+        { "month": "Sep 24", "kwh": 1540, "co2Kg": 1093, "target": 1550 },
+        { "month": "Oct 24", "kwh": 1490, "co2Kg": 1057, "target": 1550 }
+      ]
+    },
+    {
+      "id": "bio",
+      "code": "BIO",
+      "name": "Biotechnology & Bioinformatics",
+      "building": "Rosalind Franklin Genomics Pavilion",
+      "floors": "4th Floor",
+      "studentCount": 380,
+      "facultyCount": 22,
+      "labs": [
+        {
+          "id": "bio-lab-1",
+          "name": "Genomic Sequence Processing Center",
+          "room": "RF-402",
+          "pcCount": 30,
+          "hasGpus": true,
+          "hoursOpenPerDay": 12,
+          "monthlyTargetKWh": 2000,
+          "currentMonthlyKWh": 1920,
+          "anomalyAlert": null
+        }
+      ],
+      "monthlyHistory": [
+        { "month": "Nov 23", "kwh": 2250, "co2Kg": 1597, "target": 2150 },
+        { "month": "Dec 23", "kwh": 2080, "co2Kg": 1476, "target": 2100 },
+        { "month": "Jan 24", "kwh": 2140, "co2Kg": 1519, "target": 2100 },
+        { "month": "Feb 24", "kwh": 2210, "co2Kg": 1569, "target": 2050 },
+        { "month": "Mar 24", "kwh": 2300, "co2Kg": 1633, "target": 2000 },
+        { "month": "Apr 24", "kwh": 2150, "co2Kg": 1526, "target": 2000 },
+        { "month": "May 24", "kwh": 1680, "co2Kg": 1192, "target": 1800 },
+        { "month": "Jun 24", "kwh": 1520, "co2Kg": 1079, "target": 1700 },
+        { "month": "Jul 24", "kwh": 2080, "co2Kg": 1476, "target": 2000 },
+        { "month": "Aug 24", "kwh": 2120, "co2Kg": 1505, "target": 1980 },
+        { "month": "Sep 24", "kwh": 2010, "co2Kg": 1427, "target": 1950 },
+        { "month": "Oct 24", "kwh": 1920, "co2Kg": 1363, "target": 1950 }
+      ]
+    }
+  ],
+  "heatmapSchedule": [
+    { "hour": "00:00", "Mon": 14, "Tue": 15, "Wed": 14, "Thu": 16, "Fri": 15, "Sat": 9, "Sun": 8 },
+    { "hour": "02:00", "Mon": 12, "Tue": 13, "Wed": 13, "Thu": 14, "Fri": 13, "Sat": 8, "Sun": 8 },
+    { "hour": "04:00", "Mon": 12, "Tue": 12, "Wed": 12, "Thu": 13, "Fri": 12, "Sat": 8, "Sun": 7 },
+    { "hour": "06:00", "Mon": 18, "Tue": 19, "Wed": 18, "Thu": 19, "Fri": 18, "Sat": 10, "Sun": 9 },
+    { "hour": "08:00", "Mon": 48, "Tue": 52, "Wed": 50, "Thu": 53, "Fri": 49, "Sat": 22, "Sun": 14 },
+    { "hour": "10:00", "Mon": 88, "Tue": 92, "Wed": 90, "Thu": 94, "Fri": 86, "Sat": 38, "Sun": 20 },
+    { "hour": "12:00", "Mon": 95, "Tue": 98, "Wed": 96, "Thu": 99, "Fri": 93, "Sat": 42, "Sun": 24 },
+    { "hour": "14:00", "Mon": 98, "Tue": 102, "Wed": 100, "Thu": 104, "Fri": 95, "Sat": 45, "Sun": 26 },
+    { "hour": "16:00", "Mon": 86, "Tue": 90, "Wed": 88, "Thu": 91, "Fri": 82, "Sat": 36, "Sun": 22 },
+    { "hour": "18:00", "Mon": 58, "Tue": 62, "Wed": 60, "Thu": 64, "Fri": 52, "Sat": 24, "Sun": 16 },
+    { "hour": "20:00", "Mon": 32, "Tue": 36, "Wed": 34, "Thu": 38, "Fri": 28, "Sat": 15, "Sun": 12 },
+    { "hour": "22:00", "Mon": 22, "Tue": 24, "Wed": 23, "Thu": 26, "Fri": 20, "Sat": 11, "Sun": 10 }
+  ]
+}

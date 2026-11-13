@@ -1,0 +1,155 @@
+{
+  "reports": [
+    {
+      "id": "2024-10",
+      "month": "October 2024",
+      "publishDate": "2024-11-01",
+      "title": "Campus Computing Decarbonization & Circular Recovery Report",
+      "executiveSummary": "In October 2024, the institution achieved its lowest monthly computer lab electricity consumption of the academic year, recording a total reduction of 5,840 kWh across 8 academic departments. Sustained implementation of automated shutdown policies after 7:00 PM and student device eco-mode adoption drove a 16.4% reduction in peak load. E-waste collection exceeded targets by 22%, driven by the pre-Diwali electronics amnesty drive.",
+      "kpis": {
+        "co2SavedKg": 4146.4,
+        "kwhReduced": 5840,
+        "ewasteCollectedKg": 642,
+        "treeEquivalents": 190.4,
+        "costSavingsINR": 49640
+      },
+      "departmentHighlights": {
+        "topPerforming": [
+          { "department": "Information Technology", "reductionPct": 22.8, "greenScore": 92.4, "keyAction": "Piloted automatic WOL (Wake-on-LAN) scheduler cutting standby draw." },
+          { "department": "Computer Science & Engineering", "reductionPct": 19.4, "greenScore": 90.8, "keyAction": "Refurbished 45 lab PCs and diverted 240kg of e-waste." },
+          { "department": "Electronics & Communication", "reductionPct": 16.5, "greenScore": 87.2, "keyAction": "Implemented sleep triggers in VLSI lab workstations." }
+        ],
+        "needsImprovement": [
+          { "department": "Civil Engineering", "reductionPct": 11.2, "greenScore": 76.2, "issue": "GIS workstations left running rendering jobs overnight with unoptimized sleep timers." },
+          { "department": "School of Management", "reductionPct": 9.8, "greenScore": 74.8, "issue": "Bloomberg terminals maintained on active standby during weekends." }
+        ]
+      },
+      "keyAchievements": [
+        "Eliminated 100% of weekend idle vampire load in IT Lab GH-202 through central smart relays.",
+        "Over 1,280 students completed the GreenCampus Personal Footprint Calculator, pledging 6,200 kg CO2 reductions.",
+        "Partnered with R2-certified recycler to safely recover 135 grams of gold and 578 kg of high-purity copper from campus e-waste.",
+        "Zero computer equipment dispatched to municipal landfills."
+      ],
+      "recommendations": [
+        "Roll out automated script-based power down for CAD and GIS rendering machines across Mechanical and Civil departments.",
+        "Extend the 4-year workstation refresh cycle to 5 years via selective NVMe and RAM upgrades, saving an estimated 14,000 kg CO2 in embodied manufacturing emissions.",
+        "Install 2 additional smart e-waste drop-off bins at the new Research Park building entrance.",
+        "Provide solar-powered laptop charging stations at the Central Lawn study gazebos."
+      ],
+      "sdgContributions": {
+        "sdg12": {
+          "title": "SDG 12: Responsible Consumption and Production",
+          "metrics": [
+            { "label": "E-Waste Diverted from Landfill", "value": "98.4%", "target": "95%" },
+            { "label": "Hardware Extended Lifespan", "value": "4.6 Years", "target": "4.0 Years" },
+            { "label": "Total Material Upcycled", "value": "1,180 kg", "target": "1,000 kg" }
+          ],
+          "statement": "Aligned with Target 12.5 (substantially reduce waste generation through prevention, reduction, recycling, and reuse)."
+        },
+        "sdg13": {
+          "title": "SDG 13: Climate Action",
+          "metrics": [
+            { "label": "Total CO2e Abated", "value": "4.15 Tonnes", "target": "3.5 Tonnes" },
+            { "label": "Grid Emission Avoidance Rate", "value": "16.4%", "target": "12.0%" },
+            { "label": "Student Pledges Active", "value": "1,280", "target": "1,000" }
+          ],
+          "statement": "Directly supports Target 13.3 (improve education, awareness-raising, and human and institutional capacity on climate change mitigation)."
+        }
+      }
+    },
+    {
+      "id": "2024-09",
+      "month": "September 2024",
+      "publishDate": "2024-10-01",
+      "title": "Autumn Energy Benchmarking & Lab Optimization Report",
+      "executiveSummary": "September 2024 saw the return of peak academic laboratory utilization. Despite an 18% increase in lab student hours, electricity consumption grew by only 3.2% due to strict monitor sleep timeouts and department-level energy accountability dashboards.",
+      "kpis": {
+        "co2SavedKg": 3680.0,
+        "kwhReduced": 5183,
+        "ewasteCollectedKg": 480,
+        "treeEquivalents": 169.0,
+        "costSavingsINR": 44055
+      },
+      "departmentHighlights": {
+        "topPerforming": [
+          { "department": "Computer Science & Engineering", "reductionPct": 18.2, "greenScore": 89.5, "keyAction": "Virtual desktop infrastructure (VDI) migration for 30 PCs." },
+          { "department": "Information Technology", "reductionPct": 21.0, "greenScore": 91.0, "keyAction": "Nightly batch shutdown enforcement." }
+        ],
+        "needsImprovement": [
+          { "department": "Mechanical Engineering", "reductionPct": 13.0, "greenScore": 80.5, "issue": "Thermal simulations left unmonitored." }
+        ]
+      },
+      "keyAchievements": [
+        "Completed 100% LED retrofit in all 14 computing labs.",
+        "Inaugurated the GreenTech Student Society with 200 initial members."
+      ],
+      "recommendations": [
+        "Audit server room air conditioning temperature set points (+2°C adjustment recommended).",
+        "Introduce student printing quota linked to carbon impact."
+      ],
+      "sdgContributions": {
+        "sdg12": {
+          "title": "SDG 12: Responsible Consumption and Production",
+          "metrics": [
+            { "label": "E-Waste Diverted", "value": "97.8%", "target": "95%" },
+            { "label": "Reused Hardware Units", "value": "112", "target": "80" }
+          ],
+          "statement": "Expanding equipment repurposing across non-technical campus departments."
+        },
+        "sdg13": {
+          "title": "SDG 13: Climate Action",
+          "metrics": [
+            { "label": "Total CO2e Abated", "value": "3.68 Tonnes", "target": "3.2 Tonnes" },
+            { "label": "Energy Intensity Drop", "value": "14.2%", "target": "10%" }
+          ],
+          "statement": "Decoupling academic lab hours from carbon emission growth."
+        }
+      }
+    },
+    {
+      "id": "2024-08",
+      "month": "August 2024",
+      "publishDate": "2024-09-01",
+      "title": "Semester Kick-off Sustainability Baseline Report",
+      "executiveSummary": "At the start of the Autumn term, campus energy audits established a new computing baseline of 28,500 kWh/month across all academic blocks. A student induction module on sustainable computing reached 1,400 freshmen.",
+      "kpis": {
+        "co2SavedKg": 3220.0,
+        "kwhReduced": 4535,
+        "ewasteCollectedKg": 390,
+        "treeEquivalents": 147.9,
+        "costSavingsINR": 38547
+      },
+      "departmentHighlights": {
+        "topPerforming": [
+          { "department": "Electrical Engineering", "reductionPct": 17.5, "greenScore": 84.5, "keyAction": "Smart sub-metering installed in all labs." }
+        ],
+        "needsImprovement": [
+          { "department": "School of Management", "reductionPct": 8.5, "greenScore": 73.0, "issue": "AC and PC sync inefficiency." }
+        ]
+      },
+      "keyAchievements": [
+        "1,400 new freshmen onboarded to GreenCampus mobile/web portal.",
+        "Launched the campus battery recycling collection point."
+      ],
+      "recommendations": [
+        "Schedule department-wide e-waste drive prior to mid-term examinations."
+      ],
+      "sdgContributions": {
+        "sdg12": {
+          "title": "SDG 12: Responsible Consumption and Production",
+          "metrics": [
+            { "label": "Battery Recovery Rate", "value": "88%", "target": "80%" }
+          ],
+          "statement": "Safe disposal and zero toxic landfill seepage from campus batteries."
+        },
+        "sdg13": {
+          "title": "SDG 13: Climate Action",
+          "metrics": [
+            { "label": "Total CO2e Abated", "value": "3.22 Tonnes", "target": "3.0 Tonnes" }
+          ],
+          "statement": "Institutional climate pledge integration into student curriculum."
+        }
+      }
+    }
+  ]
+}
