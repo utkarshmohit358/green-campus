@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,6 +11,9 @@ if (typeof window !== 'undefined') {
 }
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     // Respect user's motion preferences
     const prefersReducedMotion = window.matchMedia(
@@ -21,30 +25,72 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     }
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1.0,
+      autoRaf: true,
+      anchors: true,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenisRef.current = lenis;
+    (window as any).__lenis = lenis;
 
-    const tickerCb = (time: number) => {
-      lenis.raf(time * 1000);
+    // Connect Lenis scroll to GSAP ScrollTrigger
+    const handleScroll = () => {
+      ScrollTrigger.update();
     };
+    lenis.on('scroll', handleScroll);
 
-    gsap.ticker.add(tickerCb);
-    gsap.ticker.lagSmoothing(0);
+    // Keep Lenis dimensions in sync whenever ScrollTrigger pins or recalculates
+    const handleRefresh = () => {
+      lenis.resize();
+    };
+    ScrollTrigger.addEventListener('refresh', handleRefresh);
+
+    // Initial recalculations after DOM and components render
+    const t1 = setTimeout(() => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    }, 150);
+
+    const t2 = setTimeout(() => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    }, 800);
+
+    const handleWindowResize = () => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleWindowResize);
 
     return () => {
-      gsap.ticker.remove(tickerCb);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener('resize', handleWindowResize);
+      ScrollTrigger.removeEventListener('refresh', handleRefresh);
+      lenis.off('scroll', handleScroll);
       lenis.destroy();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      lenisRef.current = null;
+      delete (window as any).__lenis;
     };
   }, []);
+
+  // Sync scroll position & dimensions on Next.js page route changes
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+      const timer = setTimeout(() => {
+        lenisRef.current?.resize();
+        ScrollTrigger.refresh();
+      }, 60);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
 
   return <>{children}</>;
 }

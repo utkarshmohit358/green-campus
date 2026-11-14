@@ -135,6 +135,8 @@ export function PinnedFeatureStory() {
       start: 'top top',
       end: `+=${totalFeatures * 100}%`,
       pin: stageRef.current,
+      pinSpacing: true,
+      anticipatePin: 1,
       scrub: 0.5,
       onUpdate: (self) => {
         const rawProgress = self.progress * totalFeatures;
@@ -142,6 +144,8 @@ export function PinnedFeatureStory() {
         setActiveIndex(index);
       },
     });
+
+    ScrollTrigger.refresh();
 
     return () => {
       trigger.kill();
@@ -154,7 +158,7 @@ export function PinnedFeatureStory() {
     <section ref={containerRef} className="relative bg-white dark:bg-[#06120E] transition-colors">
       <div
         ref={stageRef}
-        className="h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="h-screen w-full flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Story Copy */}

@@ -38,6 +38,30 @@
   --badge-text: #6EE7B7;
 }
 
+/* Lenis Smooth Scroll Foundation */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: auto;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
