@@ -243,6 +243,11 @@ CREATE POLICY "Allow public insert" ON public.footprint_records FOR INSERT WITH 
     }
   };
 
+  const projectId =
+    url && url.includes('.supabase.co')
+      ? url.replace(/^https?:\/\//, '').split('.')[0]
+      : 'hmmrsmauexvmkuzpsvhh';
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -268,7 +273,7 @@ CREATE POLICY "Allow public insert" ON public.footprint_records FOR INSERT WITH 
               </div>
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-xl hover:bg-neutral-100 dark:hover:bg-white/10 text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors"
+                className="p-1.5 rounded-xl hover:bg-neutral-100 dark:hover:bg-white/10 text-neutral-400 hover:text-neutral-700 dark:hover:text-white transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -278,25 +283,35 @@ CREATE POLICY "Allow public insert" ON public.footprint_records FOR INSERT WITH 
             <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2 text-xs">
               <div className="font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5">
                 <Zap className="w-4 h-4" />
-                <span>3-Minute Supabase Setup Instructions:</span>
+                <span>Quick Supabase Setup Instructions:</span>
               </div>
-              <ol className="list-decimal pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+              <ol className="list-decimal pl-5 space-y-2 text-neutral-700 dark:text-neutral-300">
                 <li>
-                  Create a free project at{' '}
+                  Open your{' '}
                   <a
-                    href="https://supabase.com"
+                    href={`https://supabase.com/dashboard/project/${projectId}/sql`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline font-semibold text-emerald-700 dark:text-emerald-400 inline-flex items-center gap-0.5"
                   >
-                    supabase.com <ExternalLink className="w-3 h-3" />
+                    Supabase SQL Editor ({projectId}) <ExternalLink className="w-3 h-3" />
                   </a>
+                  , click <strong>&quot;Copy Schema SQL&quot;</strong> below, paste it into the editor, and press <strong>RUN</strong>.
                 </li>
                 <li>
-                  Open your <strong>SQL Editor</strong> in Supabase, click <strong>&quot;Copy Schema SQL&quot;</strong> below, and press <strong>RUN</strong>.
+                  Copy your <strong>anon public key</strong> from{' '}
+                  <a
+                    href={`https://supabase.com/dashboard/project/${projectId}/settings/api`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline font-semibold text-emerald-700 dark:text-emerald-400 inline-flex items-center gap-0.5"
+                  >
+                    Project Settings → API <ExternalLink className="w-3 h-3" />
+                  </a>{' '}
+                  and paste it below.
                 </li>
                 <li>
-                  Paste your <strong>Project URL</strong> and <strong>anon public key</strong> from Project Settings → API below!
+                  Click <strong>&quot;Test Connection&quot;</strong> and <strong>&quot;Save Credentials&quot;</strong>.
                 </li>
               </ol>
             </div>

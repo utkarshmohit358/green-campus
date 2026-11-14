@@ -5,32 +5,37 @@ const STORAGE_KEY_CUSTOM_URL = 'greencampus_supabase_url';
 const STORAGE_KEY_CUSTOM_KEY = 'greencampus_supabase_anon_key';
 
 export function getSupabaseCredentials(): { url: string | null; anonKey: string | null; isCustom: boolean } {
-  const envUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const envKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (envUrl && envKey && !envUrl.includes('your-project')) {
-    return { url: envUrl, anonKey: envKey, isCustom: false };
-  }
-
-  // Check localStorage if running in browser
+  // Check localStorage if running in browser first for custom overrides
   if (typeof window !== 'undefined') {
     try {
       const customUrl = localStorage.getItem(STORAGE_KEY_CUSTOM_URL);
       const customKey = localStorage.getItem(STORAGE_KEY_CUSTOM_KEY);
-      if (customUrl && customKey) {
-        return { url: customUrl, anonKey: customKey, isCustom: true };
+      if (customUrl || customKey) {
+        const envUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const envKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        return {
+          url: customUrl || (envUrl && !envUrl.includes('your-project') ? envUrl : null),
+          anonKey: customKey || (envKey && !envKey.includes('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...') ? envKey : null),
+          isCustom: true,
+        };
       }
     } catch {
       // ignore
     }
   }
 
-  return { url: null, anonKey: null, isCustom: false };
+  const envUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const envKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  const validUrl = envUrl && !envUrl.includes('your-project') ? envUrl.trim() : null;
+  const validKey = envKey && !envKey.includes('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...') && envKey.trim().length > 10 ? envKey.trim() : null;
+
+  return { url: validUrl, anonKey: validKey, isCustom: false };
 }
 
 export function isSupabaseConfigured(): boolean {
   const { url, anonKey } = getSupabaseCredentials();
-  return Boolean(url && anonKey && url.startsWith('http'));
+  return Boolean(url && anonKey && url.startsWith('http') && anonKey.trim().length > 10);
 }
 
 let browserClient: SupabaseClient | null = null;
