@@ -180,6 +180,27 @@ GreenCampus features first-class, production-ready **Supabase PostgreSQL** integ
 
 ---
 
+## 🌐 Deploy to Vercel (Live in 60 seconds)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Futkarshmohit358%2Fgreen-campus&project-name=greencampus&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY&envDescription=Supabase%20PostgreSQL%20Cloud%20Credentials)
+
+### Option A: Via Vercel Dashboard (Recommended)
+1. Open [vercel.com/new](https://vercel.com/new).
+2. Click **Import** next to your GitHub repo **`utkarshmohit358/green-campus`**.
+3. Under **Environment Variables**, add:
+   - **`NEXT_PUBLIC_SUPABASE_URL`**: `https://hmmrsmauexvmkuzpsvhh.supabase.co`
+   - **`NEXT_PUBLIC_SUPABASE_ANON_KEY`**: `sb_publishable_6ihkYjTqafUJ1vNo1QfO9w_NibHER5-`
+4. Click **Deploy**. Your app will be live with a production HTTPS URL in under a minute!
+
+### Option B: Via Terminal CLI
+```bash
+npx vercel
+# Follow the prompts and deploy directly to production:
+npx vercel --prod
+```
+
+---
+
 ## 📜 Accessibility & Performance
 
 - **Prefers-Reduced-Motion**: Automatically disables smooth scrolling and heavy scroll-scrub animations if user prefers reduced motion.
