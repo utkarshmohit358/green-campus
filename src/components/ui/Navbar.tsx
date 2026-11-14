@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { RoleSwitcher } from './RoleSwitcher';
 import { ThemeToggle } from './ThemeToggle';
+import { SupabaseStatusBadge } from './SupabaseModal';
 import {
   Leaf,
   Menu,
@@ -111,6 +112,9 @@ export function Navbar() {
               ⌘K
             </kbd>
           </button>
+
+          {/* Supabase Status & Config */}
+          <SupabaseStatusBadge />
 
           {/* Role Switcher */}
           <RoleSwitcher />

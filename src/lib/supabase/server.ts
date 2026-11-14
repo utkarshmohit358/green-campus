@@ -1,0 +1,22 @@
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+
+export function getSupabaseServerClient(): SupabaseClient | null {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !anonKey || url.includes('your-project') || !url.startsWith('http')) {
+    return null;
+  }
+
+  return createClient(url, anonKey, {
+    auth: {
+      persistSession: false,
+    },
+  });
+}
+
+export function isSupabaseServerConfigured(): boolean {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  return Boolean(url && anonKey && url.startsWith('http') && !url.includes('your-project'));
+}

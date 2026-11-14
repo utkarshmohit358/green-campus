@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import ewasteData from '@/data/ewaste.json';
 import { calculateEwasteRecovery } from '@/lib/calculations';
-import { StorageService, type EWasteDonationLog } from '@/lib/storage';
+import { type EWasteDonationLog } from '@/lib/storage';
+import { SupabaseDatabase } from '@/lib/supabase/database';
 import { useToast } from '@/components/ui/Toast';
 import { useRole } from '@/components/providers/RoleProvider';
 import { formatNumber } from '@/lib/utils';
@@ -50,7 +51,7 @@ export default function EWastePage() {
   // Compute live recoveries
   const recoveries = calculateEwasteRecovery(ewasteData.summary.totalKgCollected);
 
-  const handleLogDonationSubmit = (e: React.FormEvent) => {
+  const handleLogDonationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const weightNum = parseFloat(estimatedKg);
     if (isNaN(weightNum) || weightNum <= 0) {
@@ -71,11 +72,16 @@ export default function EWastePage() {
       binLocationId: binId,
     };
 
-    StorageService.addEWasteDonation(newDonation);
-    toast('Drop-off logged successfully!', {
-      description: `Thank you for diverting ${weightNum} kg of ${category} from landfills!`,
-      type: 'success',
-    });
+    const { source } = await SupabaseDatabase.logEWasteDonation(newDonation);
+    toast(
+      source === 'supabase'
+        ? 'Drop-off synced to Supabase Cloud!'
+        : 'Drop-off logged successfully!',
+      {
+        description: `Thank you for diverting ${weightNum} kg of ${category} from landfills!`,
+        type: 'success',
+      }
+    );
     setShowLogModal(false);
     setDescription('');
   };

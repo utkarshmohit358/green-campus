@@ -18,9 +18,11 @@ import {
   UserCheck,
   ArrowRight,
   X,
+  Database,
 } from 'lucide-react';
 import { useTheme } from '@/components/providers/ThemeProvider';
 import { useRole } from '@/components/providers/RoleProvider';
+import { SupabaseModal } from './SupabaseModal';
 
 interface PaletteItem {
   id: string;
@@ -33,6 +35,7 @@ interface PaletteItem {
 
 export function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
+  const [supabaseOpen, setSupabaseOpen] = useState(false);
   const [query, setQuery] = useState('');
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
@@ -133,6 +136,17 @@ export function CommandPalette() {
         setIsOpen(false);
       },
       keywords: 'dark light mode appearance theme',
+    },
+    {
+      id: 'action-supabase',
+      title: 'Configure Supabase Database & Cloud Sync',
+      category: 'Actions',
+      icon: <Database className="w-4 h-4 text-emerald-500" />,
+      action: () => {
+        setIsOpen(false);
+        setSupabaseOpen(true);
+      },
+      keywords: 'supabase postgresql database sync sql connect backend cloud',
     },
     {
       id: 'role-student',
@@ -266,6 +280,11 @@ export function CommandPalette() {
           </div>
         )}
       </AnimatePresence>
+
+      <SupabaseModal
+        isOpen={supabaseOpen}
+        onClose={() => setSupabaseOpen(false)}
+      />
     </>
   );
 }

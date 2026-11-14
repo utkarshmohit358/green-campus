@@ -10,7 +10,8 @@ import {
   GRID_EMISSION_FACTOR_INDIA,
   ELECTRICITY_COST_PER_KWH_INR,
 } from '@/lib/constants';
-import { StorageService, type MeterReadingLog } from '@/lib/storage';
+import { type MeterReadingLog } from '@/lib/storage';
+import { SupabaseDatabase } from '@/lib/supabase/database';
 import { useToast } from '@/components/ui/Toast';
 import { useRole } from '@/components/providers/RoleProvider';
 import { formatNumber, formatCurrencyINR } from '@/lib/utils';
@@ -147,7 +148,7 @@ export default function LabsTrackerPage() {
     );
   }, [aggregatedStats, idleHoursOff]);
 
-  const handleLogMeterSubmit = (e: React.FormEvent) => {
+  const handleLogMeterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const kwhNum = parseFloat(readingKwh);
     if (isNaN(kwhNum) || kwhNum <= 0) {
@@ -170,11 +171,16 @@ export default function LabsTrackerPage() {
       notes: readingNotes,
     };
 
-    StorageService.addMeterReading(newReading);
-    toast('Meter reading logged successfully!', {
-      description: `Recorded ${kwhNum} kWh for ${readingLabId} on ${readingDate}.`,
-      type: 'success',
-    });
+    const { source } = await SupabaseDatabase.logMeterReading(newReading);
+    toast(
+      source === 'supabase'
+        ? 'Meter reading synced to Supabase Cloud!'
+        : 'Meter reading logged successfully!',
+      {
+        description: `Recorded ${kwhNum} kWh for ${readingLabId} on ${readingDate}.`,
+        type: 'success',
+      }
+    );
     setShowLogModal(false);
     setReadingKwh('');
     setReadingNotes('');

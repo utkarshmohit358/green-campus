@@ -157,13 +157,26 @@ $$\text{Annual Embodied } \text{CO}_2 = \frac{\text{Total Manufacturing Footprin
 
 ---
 
-## 🔄 Swapping Mock Data for a Production Database
+## ⚡ Supabase Cloud Database Integration
 
-GreenCampus features a decoupled data access layer:
-1. **API Endpoints**: All UI components read and mutate data via Next.js API routes (`/api/labs`, `/api/ewaste`, `/api/leaderboard`, `/api/reports`).
-2. **Database Migration**: To switch from JSON/localStorage to PostgreSQL (e.g. Supabase, Prisma, Neon):
-   - Replace file reads in `src/app/api/*/route.ts` with your ORM queries (`prisma.lab.findMany()`).
-   - The UI components and calculations require zero modification as they consume typed JSON contracts.
+GreenCampus features first-class, production-ready **Supabase PostgreSQL** integration with zero-friction offline/demo fallback:
+
+### 1. Features
+- **Cloud Persistence**: Stores user footprint calculations (`footprint_records`), lab meter logs (`meter_readings`), and hardware drop-offs (`ewaste_donations`).
+- **Row-Level Security (RLS)**: Enforces granular security policies while permitting public read access and authenticated/student inserts.
+- **In-App Management**: Click the **"Supabase"** status badge in the navbar or open via `⌘K` to view real-time latency, test connection credentials, and sync local data to the cloud with 1 click.
+- **Graceful Fallback**: If Supabase keys are not provided or if the network is disconnected, GreenCampus automatically defaults to typed local seed data without breaking any UI flow.
+
+### 2. Quick Setup
+1. Create a free project at [supabase.com](https://supabase.com).
+2. Open the **SQL Editor** in your Supabase dashboard.
+3. Copy and run the migration script from [`supabase/schema.sql`](./supabase/schema.sql) (or click *"Copy Schema SQL"* in the GreenCampus UI).
+4. Add your project credentials to `.env.local`:
+   ```bash
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
+   ```
+   *(Alternatively, configure directly in the browser via the Supabase modal without needing to restart the server!)*
 
 ---
 

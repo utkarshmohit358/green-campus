@@ -13,7 +13,8 @@ import {
   type UserDeviceInput,
   type FootprintCalculationResult,
 } from '@/lib/calculations';
-import { StorageService, type SavedFootprintRecord } from '@/lib/storage';
+import { type SavedFootprintRecord } from '@/lib/storage';
+import { SupabaseDatabase } from '@/lib/supabase/database';
 import { useToast } from '@/components/ui/Toast';
 import { useRole } from '@/components/providers/RoleProvider';
 import {
@@ -105,7 +106,7 @@ export default function CalculatorPage() {
   const [isExporting, setIsExporting] = useState(false);
 
   useEffect(() => {
-    setHistory(StorageService.getFootprintHistory());
+    SupabaseDatabase.getFootprintHistory().then(setHistory);
   }, []);
 
   const handleAddDevice = (deviceType: string) => {
@@ -156,7 +157,7 @@ export default function CalculatorPage() {
     toast('Calculation complete! Greener score computed.', { type: 'success' });
   };
 
-  const handleSaveToHistory = () => {
+  const handleSaveToHistory = async () => {
     if (!calculationResult) return;
     const record: SavedFootprintRecord = {
       id: `record-${Date.now()}`,
@@ -166,12 +167,18 @@ export default function CalculatorPage() {
       inputs: [...userDevices],
       result: calculationResult,
     };
-    StorageService.saveFootprintRecord(record);
-    setHistory(StorageService.getFootprintHistory());
-    toast('Footprint saved to your history!', {
-      description: 'Your reduction progress is tracked across semesters.',
-      type: 'success',
-    });
+    const { source } = await SupabaseDatabase.saveFootprint(record);
+    const updated = await SupabaseDatabase.getFootprintHistory();
+    setHistory(updated);
+    toast(
+      source === 'supabase'
+        ? 'Footprint synced to Supabase Cloud!'
+        : 'Footprint saved to local history!',
+      {
+        description: 'Your reduction progress is tracked across semesters.',
+        type: 'success',
+      }
+    );
   };
 
   const handleExportPNG = async () => {
